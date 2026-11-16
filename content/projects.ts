@@ -153,7 +153,7 @@ export const projects: readonly Project[] = [
       "I implemented registration and sign-in in Node.js, used PostgreSQL to store account data, and hashed passwords before storing them.",
     outcome:
       "The public repository contains both the backend and frontend. Its README documents how learners sign in, generate a quiz and compare their scores on the leaderboard. Learnify received Best Project recognition as a team.",
-    links: [{ href: "https://github.com/Saeedliaqa/learnify", label: "GitHub source" }],
+    links: [{ href: "https://github.com/saeedliaqat-de/learnify", label: "GitHub source" }],
   },
   {
     type: "workflow",

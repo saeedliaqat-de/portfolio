@@ -21,7 +21,7 @@ export const profile = {
   location: "Cottbus, Germany",
   university: "BTU Cottbus–Senftenberg",
   email: "saeedliaqat811@gmail.com",
-  github: "https://github.com/Saeedliaqa",
+  github: "https://github.com/saeedliaqat-de",
   linkedin: "https://www.linkedin.com/in/muhammad-saeed-liaqat-/",
   introduction: [
     "I’m a Computer Science graduate and web developer with experience building and deploying web applications, integrating APIs, and implementing backend authentication. My problem-solving background includes first place in my university’s speed programming competition.",
@@ -60,9 +60,9 @@ export const education = [
     coursework: {
       label: "Selected modules",
       items: [
-        "AI-Assisted Statistics: Exploring Data with ChatGPT & Co",
-        "Optimization in Business Transformation",
-        "Causal Data Science",
+        "Data Analytics and Process Modelling",
+        "AI-Assisted Statistics",
+        "Introduction to Transformation Studies",
       ],
     },
   },
