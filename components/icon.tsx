@@ -2,7 +2,6 @@ const paths = {
   arrow: <><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></>,
   back: <><path d="M20 12H5"/><path d="m11 18-6-6 6-6"/></>,
   external: <><path d="M7 17 17 7"/><path d="M7 7h10v10"/></>,
-  download: <><path d="M12 3v12m-5-5 5 5 5-5"/><path d="M5 17v4h14v-4"/></>,
   pin: <><path d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></>,
   email: <><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></>,
   layout: <><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></>,

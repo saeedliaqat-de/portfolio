@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Icon } from "@/components/icon";
-import { ProjectImage, ProjectStack } from "@/components/project-card";
+import { ProjectCategories, ProjectImage, ProjectStack } from "@/components/project-card";
+import { TechnologyDetails, WorkflowCaseStudy, WorkflowSteps } from "@/components/project-case-study";
 import { ScrollReveal } from "@/components/scroll-reveal";
-import { getProject, projects } from "@/content/projects";
+import { getProject, projects, type DevelopmentProject } from "@/content/projects";
 import { pageMetadata } from "@/content/site";
 
 type ProjectPageProps = PageProps<"/projects/[slug]">;
@@ -22,23 +23,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   return pageMetadata(project.title, project.summary, `/projects/${project.slug}`);
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const project = getProject((await params).slug);
-  if (!project) notFound();
-
+function DevelopmentCaseStudy({ project }: { project: DevelopmentProject }) {
   return (
-    <article className="shell interior case-study">
-      <Link href="/#projects" className="text-link back-link"><Icon name="back" /> All projects</Link>
-      <header className="interior-heading">
-        <p className="label">{project.kind}</p>
-        <h1>{project.title}</h1>
-        <p>{project.summary}</p>
-      </header>
-      <dl className="case-facts" data-reveal>
-        <div><dt>My role</dt><dd>{project.role}</dd></div>
-        <div><dt>Period</dt><dd>{project.period}</dd></div>
-        <div><dt>Technologies</dt><dd><ProjectStack items={project.stack} /></dd></div>
-      </dl>
+    <>
       <ProjectImage project={project} detail />
       <div className="case-content">
         <div>
@@ -51,6 +38,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <ul className="bullet-list">
               {project.work.map((item) => <li key={item}>{item}</li>)}
             </ul>
+            {project.requirements && (
+              <>
+                <h3 className="case-solution">Adapting to evolving requirements</h3>
+                <p>{project.requirements}</p>
+              </>
+            )}
           </section>
           <section aria-labelledby="challenge-title" data-reveal>
             <h2 id="challenge-title">Technical challenge</h2>
@@ -58,20 +51,58 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <h3 className="case-solution">My solution</h3>
             <p>{project.solution}</p>
           </section>
+          {project.enquiryWorkflow && (
+            <section aria-labelledby="enquiry-title" data-reveal>
+              <h2 id="enquiry-title">Automating enquiry capture</h2>
+              <p>{project.enquiryWorkflow.description}</p>
+              <div className="workflow-diagram">
+                <WorkflowSteps steps={project.enquiryWorkflow.steps} label="Enquiry capture steps" />
+              </div>
+            </section>
+          )}
           <section aria-labelledby="outcome-title" data-reveal>
             <h2 id="outcome-title">Outcome</h2>
             <p>{project.outcome}</p>
+          </section>
+          <section aria-labelledby="technology-title" data-reveal>
+            <h2 id="technology-title">Project technologies</h2>
+            <TechnologyDetails items={project.technicalDetails} />
           </section>
         </div>
         <aside className="evidence-panel" aria-labelledby="evidence-title" data-reveal>
           <h2 id="evidence-title">Project links</h2>
           <ul>
-            {project.links.map((link) => (
+            {[...project.links, ...(project.evidenceLinks ?? [])].map((link) => (
               <li key={link.href}><a className="text-link" href={link.href}>{link.label} <Icon name="external" /></a></li>
             ))}
           </ul>
         </aside>
       </div>
+    </>
+  );
+}
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const project = getProject((await params).slug);
+  if (!project) notFound();
+
+  const isWorkflow = project.type === "workflow";
+
+  return (
+    <article className={isWorkflow ? "shell interior case-study case-study-workflow" : "shell interior case-study"}>
+      <Link href="/#projects" className="text-link back-link"><Icon name="back" /> All projects</Link>
+      <header className="interior-heading">
+        <p className="label">{project.kind}</p>
+        <h1>{project.title}</h1>
+        <p>{isWorkflow ? project.context : project.summary}</p>
+        <ProjectCategories items={project.categories} />
+      </header>
+      <dl className={isWorkflow ? "case-facts case-facts-workflow" : "case-facts"} data-reveal>
+        <div><dt>My role</dt><dd>{project.role}</dd></div>
+        <div><dt>Period</dt><dd>{project.period}</dd></div>
+        {!isWorkflow && <div><dt>Project technologies</dt><dd><ProjectStack items={project.stack} /></dd></div>}
+      </dl>
+      {isWorkflow ? <WorkflowCaseStudy project={project} /> : <DevelopmentCaseStudy project={project} />}
       <nav className="case-navigation" aria-label="More projects" data-reveal>
         <Link href="/#projects" className="text-link"><Icon name="back" /> All projects</Link>
         {projects.filter(({ slug }) => slug !== project.slug).map(({ slug, title }) => (

@@ -2,21 +2,21 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CourseCertificates } from "@/components/course-certificates";
-import { Contact, DownloadCv, SocialLinks } from "@/components/links";
+import { Contact, SocialLinks } from "@/components/links";
 import { Icon } from "@/components/icon";
 import { HobbyGallery } from "@/components/hobby-gallery";
 import { ProjectCard } from "@/components/project-card";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SkillMarquees } from "@/components/skill-marquees";
 import { Timeline } from "@/components/timeline";
-import { awards, cv } from "@/content/documents";
+import { awards } from "@/content/documents";
 import { education, experience, profile, volunteering } from "@/content/profile";
 import { projects } from "@/content/projects";
 import { pageMetadata } from "@/content/site";
 
 export const metadata = pageMetadata(
   "Software Developer",
-  "Muhammad Saeed Liaqat is a software developer and master’s student in Cottbus, Germany. Explore his React and Node.js projects, experience and CV.",
+  "Muhammad Saeed Liaqat is a software developer and Transformation Studies master’s student in Cottbus, Germany. Explore his web development, AI integration, and workflow automation projects.",
   "/",
 );
 
@@ -53,38 +53,46 @@ export default function Home() {
             </h1>
             <div className="hero-intro">
               {profile.introduction.map((paragraph) => (
-                <p key={paragraph}>
-                  {paragraph.split("**").map((part, index) =>
-                    index % 2 ? <strong key={part}>{part}</strong> : part,
-                  )}
-                </p>
+                <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
             <div className="actions hero-actions">
               <Link className="button button-primary" href="/#projects">View projects <Icon name="arrow" /></Link>
-              <DownloadCv />
             </div>
             <div className="hero-social"><SocialLinks /></div>
           </div>
-          <figure className="hero-portrait">
-            <div className="portrait-surface">
-              <Image
-                src="/images/saeed-portrait.webp"
-                alt="Portrait of Muhammad Saeed Liaqat"
-                width={844}
-                height={834}
-                sizes="(max-width: 650px) 88vw, (max-width: 900px) 39vw, 376px"
-                loading="eager"
-                fetchPriority="high"
-              />
-            </div>
-            <figcaption><Icon name="pin" /> {profile.location}</figcaption>
-          </figure>
+          <div className="hero-visual">
+            <figure className="hero-portrait">
+              <div className="portrait-surface">
+                <Image
+                  src="/images/saeed-portrait.webp"
+                  alt="Portrait of Muhammad Saeed Liaqat"
+                  width={844}
+                  height={834}
+                  sizes="(max-width: 650px) 88vw, (max-width: 900px) 39vw, 376px"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </div>
+            </figure>
+            <section className="recruiter-facts" aria-labelledby="recruiter-facts-title" data-reveal>
+              <h2 id="recruiter-facts-title">Recruiter quick facts</h2>
+              <dl>
+                <div><dt>Location</dt><dd>{profile.location}</dd></div>
+                <div>
+                  <dt>Phone</dt>
+                  <dd><a className="text-link" href="tel:+491776445193">+49 1776 445193</a></dd>
+                </div>
+                <div><dt>Student status</dt><dd>Master’s student at {profile.university}</dd></div>
+                <div><dt>Residence status</dt><dd>Student residence permit</dd></div>
+              </dl>
+            </section>
+          </div>
         </section>
       </div>
       <div className="shell home-highlights">
         <ul data-reveal aria-label="Career highlights">
-          <li><Icon name="briefcase" /><div><Link href="#experience">Client web development</Link><p>React, deployment and technical SEO at Globaq</p></div></li>
+          <li><Icon name="briefcase" /><div><Link href="#experience">Client website &amp; automation</Link><p>40+ React pages and Google Sheets enquiry capture at GLOBAQ</p></div></li>
           <li><Icon name="trophy" /><div><Link href="#awards">Best Final-Year Project</Link><p>Team award for Learnify, an AI quiz app</p></div></li>
           <li><Icon name="education" /><div><Link href="#education">Transformation Studies</Link><p>Sociotechnical Transformation at BTU</p></div></li>
         </ul>
@@ -126,7 +134,7 @@ export default function Home() {
         <div className="shell">
           <div className="section-heading" data-reveal>
             <h2 id="projects-title">Selected projects</h2>
-            <p className="home-section-intro">A company site I took from development to launch, and an AI quiz app I built with a teammate. Each case study covers my role, the technical choices, and where you can see the work.</p>
+            <p className="home-section-intro">A client website with automated enquiry capture, an AI quiz app I built with a teammate, and a documentation workflow I helped automate during my internship.</p>
           </div>
           <div className="project-grid">
             {projects.map((project) => <ProjectCard key={project.slug} project={project} />)}
@@ -176,9 +184,8 @@ export default function Home() {
         </div>
       </section>
       <section className="shell home-section" id="certifications" aria-labelledby="certificates-title">
-        <div className="section-heading section-heading-row" data-reveal>
+        <div className="section-heading" data-reveal>
           <h2 id="certificates-title">Course certificates</h2>
-          <a className="text-link" id="cv-title" href={cv.href}>View CV PDF <Icon name="external" /></a>
         </div>
         <CourseCertificates />
       </section>

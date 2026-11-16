@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { profile } from "./profile";
 
-export const productionUrl = "https://portfolio-saeed-a040.vercel.app";
+export const productionUrl = "https://portfolio-ten-pi-srw57eqsjo.vercel.app";
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   const sharingTitle = `${title} | ${profile.name}`;

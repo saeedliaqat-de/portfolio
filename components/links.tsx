@@ -1,15 +1,6 @@
 import Link from "next/link";
-import { cv } from "@/content/documents";
 import { profile } from "@/content/profile";
 import { Icon } from "./icon";
-
-export function DownloadCv({ primary = false }: { primary?: boolean }) {
-  return (
-    <a className={primary ? "button button-primary" : "button button-secondary"} href={cv.href} download={cv.filename}>
-      <Icon name="download" /> Download CV
-    </a>
-  );
-}
 
 export function SocialLinks() {
   return (
@@ -27,7 +18,7 @@ export function Contact() {
         <div>
           <h2 id="contact-title">Get in touch</h2>
           <p className="contact-location"><Icon name="pin" /> {profile.location}</p>
-          <p>I’m looking for Werkstudent and part-time IT roles in Germany. If you’d like to discuss a role or ask about my work, you can reach me by email.</p>
+          <p>I’m looking for Werkstudent and part-time opportunities in Germany. Get in touch about software development, automation, or roles where I can build my skills in data analytics and business intelligence.</p>
         </div>
         <div className="contact-actions">
           <a className="button button-light" href={`mailto:${profile.email}`}><Icon name="email" /> {profile.email}</a>

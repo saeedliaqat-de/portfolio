@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
-import { DownloadCv } from "./links";
 
 const navigation = [
   { label: "Experience", href: "/#experience" },
@@ -75,7 +74,6 @@ function Navigation({ activeHref }: { activeHref?: string }) {
           </Link>
         </li>
       ))}
-      <li><DownloadCv primary /></li>
     </ul>
   );
 }

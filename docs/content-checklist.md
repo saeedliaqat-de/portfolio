@@ -4,12 +4,15 @@ The latest software developer CV, supplied brief, attachments and supporting doc
 
 ## Source decisions
 
-- **Master’s programme.** The CV labels it “Technical Transformation.” The brief identifies Transformation Studies at BTU Cottbus–Senftenberg and BTU lists the award as Master of Arts. The site and public CV use the official title and retain the CV’s October 2026 start date.
-- **English.** The CV lists C2. The attached IELTS Academic report records C1 in 2025. The site identifies the documented IELTS level and leaves the current self-assessment out.
-- **Globaq.** Saeed confirmed the employment letter dates (15 Aug 2025–30 Aug 2026) over the dates in the earlier CV. The brief describes a prerendered React SPA with contact and WhatsApp integration. The public site confirms the service and enquiry context. The CV’s page count, hours saved and backend wording need corroboration before inclusion.
+- **Master’s programme.** The portfolio uses “Master’s in Transformation Studies” at BTU Cottbus–Senftenberg and the CV’s October 2026 start date.
+- **English.** The site labels C2 as self-assessed and shows the 2025 IELTS Academic score separately.
+- **GLOBAQ.** Saeed confirmed the employment letter dates (15 Aug 2025–30 Aug 2026). The CV and case study brief supply the 40+ page count. The brief describes the changing client requirements, deployment through Namecheap and cPanel, and Google Sheets enquiry workflow. The employment letter supports the hosting, DNS, maintenance and communication automation responsibilities. The project code confirms the Apps Script integration and shared route list for prerendering and the sitemap. The live service page and contact form show the public enquiry path.
+- **Internship.** The latest brief and NeuroByt certificate agree on 2 June–1 August 2025. An older scan gives 2 September–1 November 2024. The updated certificate recognises software engineering, AI integration, data processing and structured data management.
+- **Session documentation.** The portfolio brief supplies the workflow, the supporting internship role and the team outcome of 20+ hours saved per week. The case study uses an anonymised workflow diagram. The available examples include identifying material, so they stay in the source files.
 - **Learnify.** The CV and public repository support the Node.js/PostgreSQL account work and the quiz and leaderboard context. The award certificate names two recipients. The case study attributes the award to the team and describes only the backend contribution as Saeed’s work.
 - **Project images.** The supplied NeuroBYT gallery contains the Globaq services and Learnify landing-page screenshots used here. The other gallery images do not appear on the site.
-- **Production URL.** The public GitHub repository lists `portfolio-saeed-a040.vercel.app`. An unauthenticated visit redirected to Vercel login. Check the intended employer-facing URL before publishing or updating the CV link.
+- **Badminton photo.** [Glen Carrie on Unsplash](https://unsplash.com/photos/a-badminton-racket-with-a-white-shuttle-on-it-wieTrtA9v6I).
+- **Production URL.** The latest CV links to `portfolio-ten-pi-srw57eqsjo.vercel.app`. A signed-out request returned the public portfolio. The former `portfolio-saeed-a040.vercel.app` URL redirected to Vercel login.
 - **LinkedIn.** The address matches the brief, CV and public GitHub profile. LinkedIn redirected the signed-out check to its sign-in wall.
 - **Optional expansion.** Add hometown context, a Learnify demo or a publishable client source link when Saeed supplies material for those items.
 
@@ -17,10 +20,9 @@ The latest software developer CV, supplied brief, attachments and supporting doc
 
 | Title | Type | Source | Public URL or asset | Verification | Publish status |
 | --- | --- | --- | --- | --- | --- |
-| Software developer CV | CV | CV V5 | `/documents/Muhammad-Saeed-Liaqat-CV.pdf` | Cross-checked with CV V5 and the supplied brief | Public-facing one-page export |
-| CV V5 original | CV | Supplied attachment | — | Source for experience, dates, qualifications and interests | Private |
-| Transformation Studies | Qualification in progress | CV V5, brief and BTU programme page | Text in the homepage education section | [BTU programme page](https://www.b-tu.de/en/transformation-studies-ma) | Text only |
-| BS in Computer Science | Qualification | CV V5 | Text in the homepage education section | — | Text only |
+| Software developer CV | CV | Supplied attachment | — | Source for experience, dates, qualifications and interests | Private |
+| Transformation Studies | Qualification in progress | CV V5, brief and BTU programme page | Text in the homepage education section | Programme and university checked | Text only |
+| BS in Computer Science | Qualification | CV supplied 16 Nov 2026 and rank certificate | Text in the homepage education section | — | Text only |
 | Complete Data Science, Machine Learning, DL, NLP Bootcamp | Course completion | CV V5 and Drive | [Udemy certificate](https://www.udemy.com/certificate/UC-81614f5a-30eb-4296-9fd5-da2dce207abf/) | Issuer URL from the CV | Issuer link only |
 | Web Development Bootcamp | Course completion | CV V5 and Drive | [Udemy certificate](https://www.udemy.com/certificate/UC-607855cc-ba42-4a5c-bff1-b71896fbd262/) | Issuer URL from the CV | Issuer link only |
 | Mastering Data Structures & Algorithms using C and C++ | Course completion | CV V5 and Drive | [Udemy certificate](https://www.udemy.com/certificate/UC-238538f7-6826-4144-bfd4-5b0bf2cbac82/) | Issuer URL from the CV | Issuer link only |
@@ -30,6 +32,6 @@ The latest software developer CV, supplied brief, attachments and supporting doc
 | Class rank | Academic standing | Supplied rank certificate | Text in the homepage education section | 12th of 56 confirmed | Text only. Scan private |
 | Employment and internship letters | Experience records | Supplied attachments | Text on the homepage and the Globaq case study | Employment letter dates confirmed by Saeed | Letters private |
 | FSC marksheet | Transcript | Supplied attachment | — | — | Private |
-| IELTS Academic report | Test report | Supplied attachment | C1 result stated as text | Report reviewed | PDF private |
+| IELTS Academic report | Test report | Supplied attachment | Overall score stated as text | Report reviewed | PDF private |
 | Recommendation letters | References | Supplied attachments | — | — | Private |
 | Two Saeed portraits | Photos | Supplied images | `/images/saeed-portrait.webp`, `/images/saeed-about.webp` | — | Optimised copies without source metadata |

@@ -22,9 +22,8 @@ The build generates the route types used by TypeScript. The project requires no 
 
 ## Maintain content
 
-- Update the introduction, contact links, skills, timelines and hobbies in `content/profile.ts`.
-- Add a record to `content/projects.ts` with a unique slug, a publishable image in `public/images/`, its dimensions and alt text, and source-backed case study details. The homepage, case-study route and sitemap use the same data.
-- Replace `public/documents/Muhammad-Saeed-Liaqat-CV.pdf` with a public-facing PDF. If the filename changes, update `content/documents.ts` too. Keep the CV and site facts in sync.
+- Update the introduction, contact links, timelines and hobbies in `content/profile.ts`. Edit the grouped skills in `components/skill-marquees.tsx`.
+- Add a record to `content/projects.ts` with a unique slug, relevant categories, a project stack and source-backed details. Use publishable, non-identifying media where available. The homepage, case-study route and sitemap use the same project data.
 - Edit selected certificates and awards in `content/documents.ts`. Use a checked issuer verification link or a PDF approved for publication.
 - Set the public canonical URL in `content/site.ts` if the production address changes. Replace the social image in `public/images/social-card.jpg` if the name or role changes.
 

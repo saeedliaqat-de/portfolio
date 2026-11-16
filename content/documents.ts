@@ -5,11 +5,6 @@ type Credential = {
   link?: { label: string; href: string };
 };
 
-export const cv = {
-  href: "/documents/Muhammad-Saeed-Liaqat-CV.pdf",
-  filename: "Muhammad-Saeed-Liaqat-CV.pdf",
-};
-
 export type CourseCertificate = Credential & {
   instructor?: { label: string; name: string };
   duration: string;
@@ -56,7 +51,7 @@ export const certificates: readonly CourseCertificate[] = [
     ],
     connection: {
       title: "Connection to my work",
-      text: "The technologies overlap with my frontend work on the Globaq website and my Node.js/PostgreSQL backend contribution to Learnify.",
+      text: "The technologies overlap with my frontend work on the GLOBAQ website and my Node.js/PostgreSQL backend contribution to Learnify.",
     },
     link: { label: "Verify certificate", href: "https://www.udemy.com/certificate/UC-607855cc-ba42-4a5c-bff1-b71896fbd262/" },
   },
@@ -120,7 +115,7 @@ export const awards: readonly Award[] = [
     issuer: "MUSTCON24 · Mirpur University of Science and Technology",
     date: "29 May 2024",
     kind: "Competition winner",
-    description: "I won the Byte Brain Teasers quiz at MUSTCON24, a two-day university event held on 28–29 May 2024. The quiz recognised knowledge across computing topics.",
+    description: "I placed first in the Byte Brain Teasers Computing Quiz at MUSTCON24. The competition tested knowledge across computer science topics.",
     icon: "medal",
   },
   {
@@ -129,7 +124,7 @@ export const awards: readonly Award[] = [
     issuer: "Mirpur University of Science and Technology",
     date: "7 Feb 2023",
     kind: "Code Champion",
-    description: "I earned the Code Champion title in SOCIT’s speed programming competition at MUST. The event tested how quickly participants could solve programming problems.",
+    description: "I placed first in SOCIT’s speed programming competition at MUST, solving algorithmic problems under time constraints.",
     icon: "code",
   },
 ];
